@@ -3,21 +3,22 @@ import { request } from '../pages/lib';
 let miVayrkyanHetoRequest = null;
 
 
-export default function UseMyHooksNwes(inputValue) {
+export default function UseMyHooksNwes(inputValue, ejiQanak) {
     let [newsArry, poxelNewsArry] = useState([])
     const NEWS_API_HOST = 'https://free-news.p.rapidapi.com/v1/search';
     useEffect(() => {
         if (inputValue != "") {
-            clearTimeout(miVayrkyanHetoRequest)
             miVayrkyanHetoRequest = setTimeout(() => {
-                request("GET", `${NEWS_API_HOST}?q=${inputValue}&lang=en&page_size=10`).then((res) => {
-                    poxelNewsArry(res.data);
+                request("GET", `${NEWS_API_HOST}?q=${inputValue}&lang=en&page_size=${ejiQanak}`).then((res) => {
+                    poxelNewsArry(res.data.articles);
                 })
             }, 1000)
         }
+
+        return () => clearTimeout(miVayrkyanHetoRequest)
     }, [inputValue])
 
-    if (newsArry.length != 0) {
+    if (newsArry && newsArry.length) {
         return newsArry
     }
 }

@@ -11,3 +11,11 @@
     font-size: 20px;
     outline: none;
 }
+.newsPosts{
+    display: flex;
+    justify-content: center;
+}
+.select{
+    padding-left: 10px;
+    margin-left: 10px;
+}

@@ -1,0 +1,12 @@
+.postContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px;
+    width: 85vw;
+}
+.post{
+    background-color: black;
+    color: red;
+    padding: 10px;
+    border-radius: 15px;
+}
