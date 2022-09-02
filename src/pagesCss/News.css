@@ -1,0 +1,13 @@
+.inputContainer{
+    padding: 0;
+    margin: 0;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.newsInput{
+    padding: 10px 5px;
+    font-size: 20px;
+    outline: none;
+}
